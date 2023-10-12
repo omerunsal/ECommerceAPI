@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "ECommerceAPI.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ECommerceAPI.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ECommerceAPI.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommerceAPI.Application.dll": {}
+        }
+      },
+      "ECommerceAPI.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ECommerceAPI.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommerceAPI.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ECommerceAPI.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/ECommerceAPI.Application/ECommerceAPI.Application.csproj",
+      "msbuildProject": "../../Core/ECommerceAPI.Application/ECommerceAPI.Application.csproj"
+    },
+    "ECommerceAPI.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Core/ECommerceAPI.Domain/ECommerceAPI.Domain.csproj",
+      "msbuildProject": "../../Core/ECommerceAPI.Domain/ECommerceAPI.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "ECommerceAPI.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\USER\\.nuget\\packages\\": {}
@@ -33,7 +70,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\USER\\Desktop\\ECommerceApp\\ECommerceAPI\\Core\\ECommerceAPI.Application\\ECommerceAPI.Application.csproj": {
+              "projectPath": "C:\\Users\\USER\\Desktop\\ECommerceApp\\ECommerceAPI\\Core\\ECommerceAPI.Application\\ECommerceAPI.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
