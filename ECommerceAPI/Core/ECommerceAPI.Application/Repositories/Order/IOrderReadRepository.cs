@@ -1,6 +1,8 @@
-﻿namespace ECommerceAPI.Application.Repositories.Order;
+﻿using ECommerceAPI.Domain.Entities;
 
-public class IOrderReadRepository
+namespace ECommerceAPI.Application.Repositories;
+
+public interface IOrderReadRepository : IReadRepository<Order>
 {
     
 }

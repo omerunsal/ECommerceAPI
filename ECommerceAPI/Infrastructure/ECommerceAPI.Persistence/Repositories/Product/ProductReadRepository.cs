@@ -1,6 +1,12 @@
-﻿namespace ECommerceAPI.Persistence.Repositories.Product;
+﻿using ECommerceAPI.Application.Repositories;
+using ECommerceAPI.Domain.Entities;
+using ECommerceAPI.Persistence.Contexts;
 
-public class ProductReadRepository
+namespace ECommerceAPI.Persistence.Repositories;
+
+public class ProductReadRepository : ReadRepository<Product>, IProductReadRepository
 {
-    
+    public ProductReadRepository(ECommerceAPIDbContext context) : base(context)
+    {
+    }
 }

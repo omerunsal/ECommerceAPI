@@ -1,6 +1,12 @@
-﻿namespace ECommerceAPI.Persistence.Repositories.Order;
+﻿using ECommerceAPI.Application.Repositories;
+using ECommerceAPI.Domain.Entities;
+using ECommerceAPI.Persistence.Contexts;
 
-public class OrderReadRepository
+namespace ECommerceAPI.Persistence.Repositories;
+
+public class OrderReadRepository:ReadRepository<Order>, IOrderReadRepository
 {
-    
+    public OrderReadRepository(ECommerceAPIDbContext context) : base(context)
+    {
+    }
 }

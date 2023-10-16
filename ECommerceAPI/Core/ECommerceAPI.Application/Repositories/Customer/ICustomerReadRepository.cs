@@ -1,6 +1,8 @@
-﻿namespace ECommerceAPI.Application.Repositories.Customer;
+﻿using ECommerceAPI.Domain.Entities;
 
-public interface ICustomerReadRepository
+namespace ECommerceAPI.Application.Repositories;
+
+public interface ICustomerReadRepository : IReadRepository<Customer>
 {
     
 }
