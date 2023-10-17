@@ -1,11 +1,11 @@
-# .NET Core Project with Onion Architecture
+# .NET Core Project with Onion Architecture (In Progress)
 
 ## Overview
-This repository contains a robust and scalable .NET Core application that utilizes the **Onion Architecture** for maintainability and separation of concerns. By adhering to best practices and design principles, this project sets the groundwork for building enterprise-level applications.
+This repository is dedicated to a .NET Core application currently under development. We're leveraging the **Onion Architecture** to ensure maintainability and a clear separation of concerns. The aim is to create a robust and scalable application by integrating best practices and efficient design patterns.
 
-## Key Features
-- **Onion Architecture**: Ensures that the application's corethis project sets the groundwork for building enterprise-level applications business logic remains at the center and free of dependencies, providing a maintainable and decoupled design.
-- **Repository Design Pattern**: Helps in abstracting the data layer, making the application more flexible to changes in the data source.
-- **CQRS (Command Query Responsibility Segregation)**: This design pattern is used to separate the read and write operations, allowing for scalability and maintainability.
-- **Docker with PostgreSQL**: Our database layer is PostgreSQL which has been containerized using Docker for easy setup, distribution, and scalability.
-- **Angular for Presentation Layer**: The user interface is built using Angular, a popular front-end framework, ensuring a responsive and dynamic user experience.
+## Key Features (Planned & In-Progress)
+- **Onion Architecture**: A structure where the Domain, or the core business logic, remains at the center, ensuring it remains isolated and free from external dependencies. This approach aims to create a maintainable, decoupled, and cohesive design.
+- **Repository Design Pattern**: This pattern will be used to abstract the data layer, intending to make the application adaptable to potential changes in the data source.
+- **CQRS (Command Query Responsibility Segregation)**: Planning to implement this design pattern to segregate read and write operations, which could aid in scalability and maintainability.
+- **Docker with PostgreSQL**: We're setting up our database layer with PostgreSQL and plan to containerize it using Docker for ease of setup and scalability.
+- **Angular for Presentation Layer**: The user interface is planned to be built using Angular to provide a dynamic user experience.
