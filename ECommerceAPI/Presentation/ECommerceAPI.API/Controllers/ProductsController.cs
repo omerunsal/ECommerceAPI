@@ -1,4 +1,5 @@
 ﻿using ECommerceAPI.Application.Repositories;
+using ECommerceAPI.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,23 +12,27 @@ namespace ECommerceAPI.API.Controllers
         private readonly IProductWriteRepository _productWriteRepository;
         private readonly IProductReadRepository _productReadRepository;
 
+        private readonly IOrderWriteRepository _orderWriteRepository;
+        private readonly IOrderReadRepository _orderReadRepository;
+
+        private readonly ICustomerWriteRepository _customerWriteRepository;
+
         public ProductsController(IProductWriteRepository productWriteRepository,
-            IProductReadRepository productReadRepository)
+            IProductReadRepository productReadRepository, IOrderWriteRepository orderWriteRepository, IOrderReadRepository orderReadRepository, ICustomerWriteRepository customerWriteRepository)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
+            _orderWriteRepository = orderWriteRepository;
+            _orderReadRepository = orderReadRepository;
+            _customerWriteRepository = customerWriteRepository;
         }
 
         [HttpGet]
-        public async void Get()
+        public async Task Get()
         {
-            await _productWriteRepository.AddRangeAsync(new()
-            {
-                new() { Id = Guid.NewGuid(), Name = "Product1", Price = 100, CreatedDate = DateTime.UtcNow, Stock = 100 },
-                new() { Id = Guid.NewGuid(), Name = "Product2", Price = 200, CreatedDate = DateTime.UtcNow, Stock = 500 },
-                new() { Id = Guid.NewGuid(), Name = "Product3", Price = 300, CreatedDate = DateTime.UtcNow, Stock = 1000 },
-            });
-            await _productWriteRepository.SaveAsync();
+            Order order = await _orderReadRepository.GetByIdAsync("ec4fca9f-1ebc-4bed-a7b5-e3114a0ce095");
+            order.Address = "Ankara";
+            await _orderWriteRepository.SaveAsync();
         }
     }
 }
